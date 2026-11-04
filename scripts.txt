@@ -1,0 +1,124 @@
+1)
+mkdir -p ~/EduAssist
+cd ~/EduAssist
+
+2)Extract the ZIP:
+unzip EduAssist_LLMOps_Assignment2_Project.zip
+
+3)cd eduassist_llmops_assignment2
+
+4) Check the files:
+ls -l
+
+5) Install Python and required system packages
+A) 
+sudo apt update
+sudo apt upgrade -y
+
+2)Install Python, pip, virtual environment, and unzip:
+sudo apt install -y python3 python3-pip python3-venv unzip
+
+3)Check Python:
+python3 --version
+
+4)
+python3.11 -m venv venv
+
+Activate it:-
+source venv/bin/activate
+
+4. Install project dependencies
+python -m pip install --upgrade pip
+
+5. Install the project requirements:
+pip install -r requirements.txt
+
+Install Jupyter Notebook and the Python kernel:
+pip install notebook ipykernel nbconvert
+
+Verify installations:
+python -c "import openai, mlflow, pandas; print('All major dependencies installed successfully')"
+
+Check MLflow:
+mlflow --version
+
+Check Jupyter:
+jupyter --version
+
+5. Configure OpenAI API credentials
+export OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
+
+
+6. Configure the model and pricing:
+
+export OPENAI_MODEL="gpt-4.1-mini"
+
+export OPENAI_INPUT_PRICE_PER_MILLION="0.40"
+
+export OPENAI_OUTPUT_PRICE_PER_MILLION="1.60"
+
+7. Verify that the key is configured without printing its value
+python -c "import os; print('API Key configured:', bool(os.getenv('OPENAI_API_KEY')))"
+
+6. Start the MLflow tracking server
+source venv/bin/activate
+
+Start the MLflow server
+
+mlflow server \
+  --host 0.0.0.0 \
+  --port 5000 \
+  --backend-store-uri sqlite:///mlflow.db \
+  --default-artifact-root ./mlartifacts
+
+
+Open the following address inside the VM:
+
+http://127.0.0.1:5000
+
+7) Launch Jupyter Notebook
+cd ~/EduAssist/eduassist_llmops_assignment2
+
+8) Activate the same virtual environment:
+source venv/bin/activate
+
+Set the API variables again
+
+export OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
+export OPENAI_MODEL="gpt-4.1-mini"
+export OPENAI_INPUT_PRICE_PER_MILLION="0.40"
+export OPENAI_OUTPUT_PRICE_PER_MILLION="1.60"
+export MLFLOW_TRACKING_URI="http://127.0.0.1:5000"
+
+Launch Jupyter:
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
+
+For a remote VM, connect from your host using SSH port forwarding:
+ssh -L 8888:127.0.0.1:8888 ubuntu@YOUR_VM_IP
+
+
+http://127.0.0.1:8888
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
