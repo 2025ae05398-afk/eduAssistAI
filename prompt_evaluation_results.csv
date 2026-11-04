@@ -1,0 +1,1 @@
+prompt_version,mlflow_prompt_version,avg_latency_seconds,avg_input_tokens,avg_output_tokens,avg_cost_per_request_usd,valid_json,successful_responses,recommended

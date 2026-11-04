@@ -1,0 +1,22 @@
+[
+  {
+    "question_id": "Q1",
+    "question": "What is the difference between supervised and unsupervised learning?"
+  },
+  {
+    "question_id": "Q2",
+    "question": "Explain overfitting in machine learning and give two ways to reduce it."
+  },
+  {
+    "question_id": "Q3",
+    "question": "What is the purpose of a train-test split when building a machine learning model?"
+  },
+  {
+    "question_id": "Q4",
+    "question": "Explain precision and recall, and describe when each metric is useful."
+  },
+  {
+    "question_id": "Q5",
+    "question": "What is data drift, and why should a deployed machine learning system monitor it?"
+  }
+]

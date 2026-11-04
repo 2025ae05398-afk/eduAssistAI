@@ -1,0 +1,24 @@
+LLMOps Assignment 2 — Short Report Template (500–700 words)
+
+Title: API Cost, Latency, and Prompt Version Management for EduAssist AI
+
+1. Objective and setup
+This experiment evaluates three prompt versions for EduAssist AI using the same five academic questions. The API model was [MODEL], accessed through the OpenAI Chat Completions API. The experiment was run on [DATE] using Python [VERSION], MLflow [VERSION], and the public model pricing checked on [DATE]. Prices were configured as USD [INPUT PRICE] per one million input tokens and USD [OUTPUT PRICE] per one million output tokens. The API key was supplied through the OPENAI_API_KEY environment variable and was not embedded in the notebook.
+
+2. Method
+Prompt v1 is a minimal baseline. Prompt v2 adds an academic-assistant role and concise undergraduate-friendly language guidance. Prompt v3 adds strict JSON-only instructions with the required answer, confidence, and key_points fields. Each prompt was run against the same five questions, for up to 15 API requests. The notebook recorded UTC start/end timestamps, elapsed wall-clock latency, status, model, usage tokens, and estimated request cost. Failed requests were retained with an error status rather than silently treated as successful zero-cost calls. MLflow registered each prompt with a meaningful commit message and logged average latency, input tokens, output tokens, cost per request, and JSON validity.
+
+3. Results
+Insert the prompt comparison table from prompt_evaluation_results.csv. Across successful requests, mean latency was [X] seconds, median latency [Y] seconds, minimum [Z] seconds, maximum [W] seconds, and sample standard deviation [S] seconds. The slowest request was [QUESTION/PROMPT VERSION] at [LATENCY] seconds. Plausible contributors include network conditions, service-side queueing, prompt size, and output length; a single observation cannot establish causality.
+
+The average request cost was [COST] USD for the selected prompt, resulting in a projected cost of [MONTHLY COST] USD for 10,000 requests under the same usage assumptions. This projection is an estimate, not a billing guarantee. Actual charges may differ due to pricing changes, cached input, retries, or additional API features.
+
+4. Prompt comparison and production decision
+Prompt v1 provides a useful baseline but does not explicitly constrain format or audience. Prompt v2 improves style instructions and is expected to make answers more consistent, although its natural-language response is not guaranteed to be machine-parseable. Prompt v3 is designed for structured downstream use. Its measured valid_json score was [RATE], calculated as the number of successful responses that satisfy JSON syntax and the required field/type checks divided by the number of successful responses. JSON validity alone does not prove factual accuracy, completeness, or appropriate confidence, so manual quality review remains important.
+
+The production alias was assigned to [VERSION] using the notebook’s transparent selection rule: highest observed JSON validity, then lower average cost, then lower average latency. [Explain whether the observed results support this choice, including quality, JSON validity, latency, token usage, and cost.] The MLflow Prompt Registry provides version history and commit messages; the production alias can be moved to another tested version without hard-coding a version number in application code.
+
+5. Cost optimization and limitations
+A practical optimization is to limit response length while retaining the information students need. Additional opportunities include caching stable instructions, using a smaller model for simple questions after evaluating quality, and monitoring token usage and latency over time. The sample contains only five questions per version, so its performance estimates are illustrative and may not generalize to real traffic. Future evaluation should use a larger, representative question set and include factuality, completeness, safety, and human-review measures.
+
+Replace all bracketed placeholders with values from your actual run. Do not submit this template with placeholders or claim unobserved results.
