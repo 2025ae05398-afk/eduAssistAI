@@ -1,5 +1,7 @@
 OPENAPIKey:-
 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
+
+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
 1)
 mkdir -p ~/EduAssist
 cd ~/EduAssist
@@ -50,6 +52,7 @@ jupyter --version
 5. Configure OpenAI API credentials
 export OPENAI_API_KEY="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"
 
+export OPENAI_API_KEY="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"
 
 6. Configure the model and pricing:
 
