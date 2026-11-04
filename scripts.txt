@@ -2,6 +2,8 @@ OPENAPIKey:-
 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
 
 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
+AQ.Ab8RN6I5QF-s_Z3jZww8fYaS5DWcYTVqefCLDnyXcYb2Utzscg
+
 1)
 mkdir -p ~/EduAssist
 cd ~/EduAssist
@@ -54,7 +56,7 @@ export OPENAI_API_KEY="sk-proj-Et5Df0d2o6_RqSoNUw7BrkoByBmKyWj1PYs16Bwl2OtebvIAA
 
 export OPENAI_API_KEY="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"
 
-export GEMINI_API_KEY="AQ.Ab8RN6LF_u7lAMbTfy1fj9fqECAG5hzjw-fIDipNkEY5YgHJ6g"
+export GEMINI_API_KEY="AQ.Ab8RN6I5QF-s_Z3jZww8fYaS5DWcYTVqefCLDnyXcYb2Utzscg"
 
 6. Configure the model and pricing:
 
@@ -106,7 +108,17 @@ ssh -L 8888:127.0.0.1:8888 ubuntu@YOUR_VM_IP
 
 http://127.0.0.1:8888
 
+-----------------------------
+ollama pull llama3.1:8b
 
+export OLLAMA_NUM_PARALLEL=1
+export OLLAMA_MAX_LOADED_MODELS=1
+export OLLAMA_MAX_QUEUE=1
+
+ollama serve
+
+pip install -U ollama mlflow pandas psutil
+-----------
 
 
 
