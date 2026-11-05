@@ -7977,12 +7977,12 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=51fa03ce">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=51fa03ce">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">render_prompt</span><span class="p">(</span><span class="n">template</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -8108,12 +8108,250 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ebb76b84">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>question_id</th>
+<th>prompt_version</th>
+<th>model_name</th>
+<th>latency_seconds</th>
+<th>response_status</th>
+<th>input_tokens</th>
+<th>output_tokens</th>
+<th>total_tokens</th>
+<th>cost_per_request_usd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Q1</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>68.955304</td>
+<td>success</td>
+<td>31</td>
+<td>96</td>
+<td>127</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Q2</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>43.101426</td>
+<td>success</td>
+<td>34</td>
+<td>96</td>
+<td>130</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Q3</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>53.390731</td>
+<td>success</td>
+<td>35</td>
+<td>96</td>
+<td>131</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Q4</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>57.794783</td>
+<td>success</td>
+<td>32</td>
+<td>96</td>
+<td>128</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Q5</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>42.071706</td>
+<td>success</td>
+<td>35</td>
+<td>96</td>
+<td>131</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Q1</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>47.369301</td>
+<td>success</td>
+<td>53</td>
+<td>96</td>
+<td>149</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Q2</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>40.970570</td>
+<td>success</td>
+<td>56</td>
+<td>96</td>
+<td>152</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Q3</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>41.507136</td>
+<td>success</td>
+<td>57</td>
+<td>96</td>
+<td>153</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Q4</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>41.802246</td>
+<td>success</td>
+<td>54</td>
+<td>96</td>
+<td>150</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Q5</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>41.637788</td>
+<td>success</td>
+<td>57</td>
+<td>96</td>
+<td>153</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Q1</td>
+<td>v3</td>
+<td>llama3.1:8b</td>
+<td>55.194075</td>
+<td>success</td>
+<td>84</td>
+<td>96</td>
+<td>180</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Q2</td>
+<td>v3</td>
+<td>llama3.1:8b</td>
+<td>40.902566</td>
+<td>success</td>
+<td>87</td>
+<td>96</td>
+<td>183</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>12</th>
+<td>Q3</td>
+<td>v3</td>
+<td>llama3.1:8b</td>
+<td>40.774170</td>
+<td>success</td>
+<td>88</td>
+<td>94</td>
+<td>182</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>13</th>
+<td>Q4</td>
+<td>v3</td>
+<td>llama3.1:8b</td>
+<td>40.034322</td>
+<td>success</td>
+<td>85</td>
+<td>96</td>
+<td>181</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>14</th>
+<td>Q5</td>
+<td>v3</td>
+<td>llama3.1:8b</td>
+<td>40.649686</td>
+<td>success</td>
+<td>88</td>
+<td>96</td>
+<td>184</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>\nEvaluation Summary
+------------------
+Total requests: 15
+Successful requests: 15
+Failed requests: 0
+Average latency: 46.4104 seconds
+Total local token cost (USD): 0.0
+Saved: latency_tokens_cost.csv
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ebb76b84">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">successful</span> <span class="o">=</span> <span class="n">latency_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">latency_df</span><span class="p">[</span><span class="s2">"response_status"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"success"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -8136,6 +8374,64 @@ Ollama model is available.
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>count</th>
+<th>mean_seconds</th>
+<th>median_seconds</th>
+<th>min_seconds</th>
+<th>max_seconds</th>
+<th>std_seconds_sample</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>15</td>
+<td>46.410387</td>
+<td>41.802246</td>
+<td>40.034322</td>
+<td>68.955304</td>
+<td>8.569206</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Slowest successful request: Q1 / v1 at 68.955s.
+Possible reasons include network/service variability, request queueing, prompt length, and generated output length. One observation alone cannot identify the cause.
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=57096b9c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8147,12 +8443,12 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=769dc824">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=769dc824">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">MLFLOW_DB</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"mlflow.db"</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
@@ -8182,12 +8478,29 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ef92d124">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>MLflow Tracking URI: sqlite:////home/s2025ae05398/workspace/eduAssistAI/mlflow.db
+Experiment: eduassist_llmops_assignment
+v1 registered as MLflow prompt version 53
+v2 registered as MLflow prompt version 54
+v3 registered as MLflow prompt version 55
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ef92d124">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_valid_eduassist_json</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -8233,12 +8546,92 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5d14b5b1">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>mlflow_prompt_version</th>
+<th>avg_latency_seconds</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_cost_per_request_usd</th>
+<th>valid_json</th>
+<th>successful_responses</th>
+<th>recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
+<td>53</td>
+<td>53.062790</td>
+<td>33.4</td>
+<td>96.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+<td>False</td>
+</tr>
+<tr>
+<th>1</th>
+<td>v2</td>
+<td>54</td>
+<td>42.657408</td>
+<td>55.4</td>
+<td>96.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+<td>False</td>
+</tr>
+<tr>
+<th>2</th>
+<td>v3</td>
+<td>55</td>
+<td>43.510964</td>
+<td>86.4</td>
+<td>95.6</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>5</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5d14b5b1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Log metrics to MLflow. Missing values are omitted rather than logged as NaN.</span>
@@ -8280,12 +8673,106 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3dfeaca4">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Recommended version: v3; assigned MLflow alias 'eduassist_academic_qa@production' -&gt; version 55.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>mlflow_prompt_version</th>
+<th>avg_latency_seconds</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_cost_per_request_usd</th>
+<th>valid_json</th>
+<th>successful_responses</th>
+<th>recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
+<td>53</td>
+<td>53.062790</td>
+<td>33.4</td>
+<td>96.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+<td>False</td>
+</tr>
+<tr>
+<th>1</th>
+<td>v2</td>
+<td>54</td>
+<td>42.657408</td>
+<td>55.4</td>
+<td>96.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+<td>False</td>
+</tr>
+<tr>
+<th>2</th>
+<td>v3</td>
+<td>55</td>
+<td>43.510964</td>
+<td>86.4</td>
+<td>95.6</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>5</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Saved prompt_evaluation_results.csv
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3dfeaca4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Summary tables for the report</span>
@@ -8302,6 +8789,86 @@ Ollama model is available.
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Monthly projection formula: average cost per successful request × 10,000."</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Pricing is an estimate in USD, based on the configured model rates and API usage counts."</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>successful_requests</th>
+<th>avg_cost_per_request_usd</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_latency_seconds</th>
+<th>projected_monthly_cost_10000_usd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
+<td>5</td>
+<td>0.0</td>
+<td>33.4</td>
+<td>96.0</td>
+<td>53.062790</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>v2</td>
+<td>5</td>
+<td>0.0</td>
+<td>55.4</td>
+<td>96.0</td>
+<td>42.657408</td>
+<td>0.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>v3</td>
+<td>5</td>
+<td>0.0</td>
+<td>86.4</td>
+<td>95.6</td>
+<td>43.510964</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Monthly projection formula: average cost per successful request × 10,000.
+Pricing is an estimate in USD, based on the configured model rates and API usage counts.
+</pre>
 </div>
 </div>
 </div>
@@ -8323,12 +8890,12 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a3753052-7d5a-42de-a0d1-665eb5ee2632">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a3753052-7d5a-42de-a0d1-665eb5ee2632">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mlflow</span>
@@ -8346,12 +8913,27 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=edee6553-8241-4ea5-b8e6-85fb23dd5d27">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Tracking URI: sqlite:////home/s2025ae05398/workspace/eduAssistAI/mlflow.db
+Experiment: eduassist_llmops_assignment
+Experiment ID: 1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=edee6553-8241-4ea5-b8e6-85fb23dd5d27">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mlflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">MlflowClient</span>
@@ -8372,12 +8954,27 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=137efb45-55af-426b-97b9-d1a8060ed47e">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Registered prompts:
+Prompt Name: eduassist_academic_qa
+Prompt Details: &lt;PromptInfo: name='eduassist_academic_qa', description='Initial baseline academic QA prompt', tags={'assignment': 'llmops_assignment_2', 'prompt_version_label': 'v3', '_mlflow_experiment_ids': ',1,'}&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=137efb45-55af-426b-97b9-d1a8060ed47e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -8394,12 +8991,102 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e3c573d5-4e78-4b6a-822e-fd430ee87daf">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Rows: 3
+
+Columns:
+['prompt_version', 'mlflow_prompt_version', 'avg_latency_seconds', 'avg_input_tokens', 'avg_output_tokens', 'avg_cost_per_request_usd', 'valid_json', 'successful_responses', 'recommended']
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>mlflow_prompt_version</th>
+<th>avg_latency_seconds</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_cost_per_request_usd</th>
+<th>valid_json</th>
+<th>successful_responses</th>
+<th>recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
+<td>53</td>
+<td>53.062790</td>
+<td>33.4</td>
+<td>96.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+<td>False</td>
+</tr>
+<tr>
+<th>1</th>
+<td>v2</td>
+<td>54</td>
+<td>42.657408</td>
+<td>55.4</td>
+<td>96.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5</td>
+<td>False</td>
+</tr>
+<tr>
+<th>2</th>
+<td>v3</td>
+<td>55</td>
+<td>43.510964</td>
+<td>86.4</td>
+<td>95.6</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>5</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e3c573d5-4e78-4b6a-822e-fd430ee87daf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -8421,16 +9108,276 @@ Ollama model is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bb9c29d7-fb8f-4f26-808f-35c0bb4ec8ba">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Total API calls: 15
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>question_id</th>
+<th>prompt_version</th>
+<th>model_name</th>
+<th>start_time_utc</th>
+<th>end_time_utc</th>
+<th>latency_seconds</th>
+<th>response_status</th>
+<th>input_tokens</th>
+<th>output_tokens</th>
+<th>total_tokens</th>
+<th>input_cost_usd</th>
+<th>output_cost_usd</th>
+<th>cost_per_request_usd</th>
+<th>error</th>
+<th>response_text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Q1</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:45:48.388933+00:00</td>
+<td>2026-11-05T07:46:57.344247+00:00</td>
+<td>68.955304</td>
+<td>success</td>
+<td>31</td>
+<td>96</td>
+<td>127</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>**Supervised Learning:**\n\nIn supervised lear...</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Q2</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:46:57.344290+00:00</td>
+<td>2026-11-05T07:47:40.445723+00:00</td>
+<td>43.101426</td>
+<td>success</td>
+<td>34</td>
+<td>96</td>
+<td>130</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>**Overfitting in Machine Learning**\n=========...</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Q3</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:47:40.445771+00:00</td>
+<td>2026-11-05T07:48:33.836506+00:00</td>
+<td>53.390731</td>
+<td>success</td>
+<td>35</td>
+<td>96</td>
+<td>131</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>## Step 1: Understanding the purpose of a trai...</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Q4</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:48:33.836557+00:00</td>
+<td>2026-11-05T07:49:31.631345+00:00</td>
+<td>57.794783</td>
+<td>success</td>
+<td>32</td>
+<td>96</td>
+<td>128</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>**Precision and Recall: Understanding the Metr...</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Q5</td>
+<td>v1</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:49:31.631386+00:00</td>
+<td>2026-11-05T07:50:13.703097+00:00</td>
+<td>42.071706</td>
+<td>success</td>
+<td>35</td>
+<td>96</td>
+<td>131</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>**Data Drift: Understanding its Impact on Mach...</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Q1</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:50:13.703141+00:00</td>
+<td>2026-11-05T07:51:01.072447+00:00</td>
+<td>47.369301</td>
+<td>success</td>
+<td>53</td>
+<td>96</td>
+<td>149</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>In machine learning, there are two main types ...</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Q2</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:51:01.072491+00:00</td>
+<td>2026-11-05T07:51:42.043065+00:00</td>
+<td>40.970570</td>
+<td>success</td>
+<td>56</td>
+<td>96</td>
+<td>152</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>**What is Overfitting in Machine Learning?**\n...</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Q3</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:51:42.043106+00:00</td>
+<td>2026-11-05T07:52:23.550248+00:00</td>
+<td>41.507136</td>
+<td>success</td>
+<td>57</td>
+<td>96</td>
+<td>153</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>When building a machine learning model, a trai...</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Q4</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:52:23.550290+00:00</td>
+<td>2026-11-05T07:53:05.352539+00:00</td>
+<td>41.802246</td>
+<td>success</td>
+<td>54</td>
+<td>96</td>
+<td>150</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>I'd be happy to explain precision and recall i...</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Q5</td>
+<td>v2</td>
+<td>llama3.1:8b</td>
+<td>2026-11-05T07:53:05.352581+00:00</td>
+<td>2026-11-05T07:53:46.990373+00:00</td>
+<td>41.637788</td>
+<td>success</td>
+<td>57</td>
+<td>96</td>
+<td>153</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>**Data Drift:**\n\nData drift refers to a chan...</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+API errors:
+[]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bb9c29d7-fb8f-4f26-808f-35c0bb4ec8ba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>html<span class="w"> </span>MLOps_Assignment_2.ipynb
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[NbConvertApp] Converting notebook MLOps_Assignment_2.ipynb to html
+[NbConvertApp] Writing 356619 bytes to MLOps_Assignment_2.html
+</pre>
 </div>
 </div>
 </div>
