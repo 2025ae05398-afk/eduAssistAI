@@ -1,10 +1,10 @@
 question_id,prompt_version,model_name,start_time_utc,end_time_utc,latency_seconds,response_status,input_tokens,output_tokens,total_tokens,input_cost_usd,output_cost_usd,cost_per_request_usd,error,response_text
-Q1,v1,llama3.1:8b,2026-11-05T07:23:08.368282+00:00,2026-11-05T07:24:28.299651+00:00,79.93135,success,31,96,127,0.0,0.0,0.0,,"**Supervised Learning:**
+Q1,v1,llama3.1:8b,2026-11-05T07:45:48.388933+00:00,2026-11-05T07:46:57.344247+00:00,68.955304,success,31,96,127,0.0,0.0,0.0,,"**Supervised Learning:**
 
 In supervised learning, the algorithm is trained on labeled data, where each example is associated with a target output. The goal is to learn a mapping between inputs and outputs, so that the algorithm can make predictions on new, unseen data.
 
 Think of it like a teacher explaining a concept to a student. The teacher provides examples of the concept, along with the correct answers (labels). The student (algorithm) learns from these examples and can then apply what"
-Q2,v1,llama3.1:8b,2026-11-05T07:24:28.299701+00:00,2026-11-05T07:25:07.819362+00:00,39.519655,success,34,96,130,0.0,0.0,0.0,,"**Overfitting in Machine Learning**
+Q2,v1,llama3.1:8b,2026-11-05T07:46:57.344290+00:00,2026-11-05T07:47:40.445723+00:00,43.101426,success,34,96,130,0.0,0.0,0.0,,"**Overfitting in Machine Learning**
 =====================================
 
 Overfitting is a common problem in machine learning where a model is too complex and learns the noise in the training data rather than the underlying patterns. As a result, the model performs well on the training data but poorly on new, unseen data. This can lead to poor generalization and a model that is not useful in practice.
@@ -13,19 +13,19 @@ Overfitting is a common problem in machine learning where a model is too complex
 ------------------------
 
 1.  **Complexity**: Models"
-Q3,v1,llama3.1:8b,2026-11-05T07:25:07.819403+00:00,2026-11-05T07:25:50.893295+00:00,43.073888,success,35,96,131,0.0,0.0,0.0,,"## Step 1: Understanding the purpose of a train-test split
+Q3,v1,llama3.1:8b,2026-11-05T07:47:40.445771+00:00,2026-11-05T07:48:33.836506+00:00,53.390731,success,35,96,131,0.0,0.0,0.0,,"## Step 1: Understanding the purpose of a train-test split
 The primary purpose of a train-test split in machine learning is to evaluate the performance of a model on unseen data. This is crucial because the model is trained on a portion of the available data (the training set), and we want to know how well it generalizes to new, unseen data (the test set).
 
 ## Step 2: Identifying the benefits of a train-test split
 By splitting the data"
-Q4,v1,llama3.1:8b,2026-11-05T07:25:50.893335+00:00,2026-11-05T07:26:30.068094+00:00,39.174755,success,32,96,128,0.0,0.0,0.0,,"**Precision and Recall: Understanding the Metrics**
+Q4,v1,llama3.1:8b,2026-11-05T07:48:33.836557+00:00,2026-11-05T07:49:31.631345+00:00,57.794783,success,32,96,128,0.0,0.0,0.0,,"**Precision and Recall: Understanding the Metrics**
 
 In the context of classification, clustering, or information retrieval tasks, precision and recall are two essential metrics used to evaluate the performance of a model. These metrics provide insights into the model's ability to accurately identify relevant instances or classes.
 
 **Precision:**
 
 Precision measures the proportion of true positives (correctly predicted instances) among all predicted positive instances. In other words, it calculates the ratio of relevant instances to the total number of instances retrieved"
-Q5,v1,llama3.1:8b,2026-11-05T07:26:30.068134+00:00,2026-11-05T07:27:11.431097+00:00,41.362956,success,35,96,131,0.0,0.0,0.0,,"**Data Drift: Understanding its Impact on Machine Learning Systems**
+Q5,v1,llama3.1:8b,2026-11-05T07:49:31.631386+00:00,2026-11-05T07:50:13.703097+00:00,42.071706,success,35,96,131,0.0,0.0,0.0,,"**Data Drift: Understanding its Impact on Machine Learning Systems**
 ===========================================================
 
 **What is Data Drift?**
@@ -39,36 +39,37 @@ Data drift, also known as concept drift, is a phenomenon where the underlying di
 *   Seasonal variations
 
 "
-Q1,v2,llama3.1:8b,2026-11-05T07:27:11.431157+00:00,2026-11-05T07:27:57.756431+00:00,46.325267,success,53,96,149,0.0,0.0,0.0,,"In machine learning, there are two main types of learning: supervised and unsupervised. The main difference between them is how the model learns from the data.
+Q1,v2,llama3.1:8b,2026-11-05T07:50:13.703141+00:00,2026-11-05T07:51:01.072447+00:00,47.369301,success,53,96,149,0.0,0.0,0.0,,"In machine learning, there are two main types of learning: supervised and unsupervised. The main difference between them is how the model learns from the data.
 
 **Supervised Learning:**
 
 In supervised learning, the model is trained on labeled data, meaning the data is already classified or tagged with the correct output. The model learns to map inputs to outputs based on the labeled data. Think of it like a teacher showing you examples of different animals and telling you what each one is"
-Q2,v2,llama3.1:8b,2026-11-05T07:27:57.756478+00:00,2026-11-05T07:28:58.370482+00:00,60.614,success,56,96,152,0.0,0.0,0.0,,"**What is Overfitting in Machine Learning?**
+Q2,v2,llama3.1:8b,2026-11-05T07:51:01.072491+00:00,2026-11-05T07:51:42.043065+00:00,40.97057,success,56,96,152,0.0,0.0,0.0,,"**What is Overfitting in Machine Learning?**
 
 Overfitting is a common problem in machine learning where a model is too complex and learns the noise in the training data instead of the underlying patterns. As a result, the model performs well on the training data but poorly on new, unseen data. This is like a student memorizing the answers to a set of exam questions, but not understanding the underlying concepts.
 
 **Why does Overfitting Happen?**
 
 Overfit"
-Q3,v2,llama3.1:8b,2026-11-05T07:28:58.370522+00:00,2026-11-05T07:29:52.386959+00:00,54.016432,success,57,96,153,0.0,0.0,0.0,,"When building a machine learning model, a train-test split is a technique used to evaluate the model's performance on unseen data. The purpose of a train-test split is to:
+Q3,v2,llama3.1:8b,2026-11-05T07:51:42.043106+00:00,2026-11-05T07:52:23.550248+00:00,41.507136,success,57,96,153,0.0,0.0,0.0,,"When building a machine learning model, a train-test split is a technique used to evaluate the model's performance on unseen data. The purpose of a train-test split is to:
 
 1. **Prevent Overfitting**: When a model is trained on the entire dataset, it may become too specialized to the specific data and fail to generalize well to new, unseen data. A train-test split helps prevent overfitting by reserving some data for testing.
 2. **Evaluate Model"
-Q4,v2,llama3.1:8b,2026-11-05T07:29:52.387000+00:00,2026-11-05T07:30:56.183754+00:00,63.796749,success,54,96,150,0.0,0.0,0.0,,"I'd be happy to explain precision and recall in a way that's easy to understand.
+Q4,v2,llama3.1:8b,2026-11-05T07:52:23.550290+00:00,2026-11-05T07:53:05.352539+00:00,41.802246,success,54,96,150,0.0,0.0,0.0,,"I'd be happy to explain precision and recall in a way that's easy to understand.
 
 **Precision** and **Recall** are two important metrics used to evaluate the performance of a model or a system, especially in areas like machine learning, natural language processing, and information retrieval.
 
 **Precision** measures how accurate a model is when it makes a prediction or classification. It's the ratio of true positives (correct predictions) to the sum of true positives and false positives (incorrect"
-Q5,v2,llama3.1:8b,2026-11-05T07:30:56.183794+00:00,2026-11-05T07:32:08.030753+00:00,71.846953,success,57,96,153,0.0,0.0,0.0,,"**Data Drift:**
+Q5,v2,llama3.1:8b,2026-11-05T07:53:05.352581+00:00,2026-11-05T07:53:46.990373+00:00,41.637788,success,57,96,153,0.0,0.0,0.0,,"**Data Drift:**
 
-Data drift refers to a change in the underlying distribution of the data that a machine learning model is trained on. This means that the data that the model is seeing in real-world applications is different from the data it was trained on. This change can occur over time due to various reasons such as:
+Data drift refers to a change in the underlying distribution of the data used to train a machine learning model over time. This means that the data that the model is seeing in real-world applications is different from the data it was trained on. This change can affect the model's performance and accuracy.
 
-*   Changes in user behavior
-*   Shifts in market trends
-*   Updates in data collection methods
-*   Changes in the underlying system or"
-Q1,v3,llama3.1:8b,2026-11-05T07:32:08.030798+00:00,2026-11-05T07:33:14.047109+00:00,66.016307,success,84,96,180,0.0,0.0,0.0,,"{
+**Why Monitor Data Drift?**
+
+A deployed machine learning system should monitor data drift because it can lead to:
+
+1. **Decreased model performance**: If"
+Q1,v3,llama3.1:8b,2026-11-05T07:53:46.990415+00:00,2026-11-05T07:54:42.184495+00:00,55.194075,success,84,96,180,0.0,0.0,0.0,,"{
   ""answer"": ""Supervised learning involves training a model on labeled data to make predictions on new, unseen data. Unsupervised learning involves training a model on unlabeled data to identify patterns or relationships."",
   ""confidence"": ""high"",
   ""key_points"": [
@@ -78,9 +79,9 @@ Q1,v3,llama3.1:8b,2026-11-05T07:32:08.030798+00:00,2026-11-05T07:33:14.047109+00
     ""Unsupervised learning identifies patterns""
   ]
 }"
-Q2,v3,llama3.1:8b,2026-11-05T07:33:14.047152+00:00,2026-11-05T07:34:06.632315+00:00,52.585158,success,87,96,183,0.0,0.0,0.0,,"{
+Q2,v3,llama3.1:8b,2026-11-05T07:54:42.184536+00:00,2026-11-05T07:55:23.087107+00:00,40.902566,success,87,96,183,0.0,0.0,0.0,,"{
   ""answer"": ""Overfitting occurs when a machine learning model is too complex and learns the noise in the training data, resulting in poor performance on new, unseen data. This can happen when a model has too many parameters or when the training data is too small. To reduce overfitting, two common techniques are regularization and data augmentation. Regularization involves adding a penalty term to the loss function to discourage large weights, while data augmentation involves generating new training examples by"
-Q3,v3,llama3.1:8b,2026-11-05T07:34:06.632358+00:00,2026-11-05T07:34:47.463135+00:00,40.830772,success,88,94,182,0.0,0.0,0.0,,"{
+Q3,v3,llama3.1:8b,2026-11-05T07:55:23.087148+00:00,2026-11-05T07:56:03.861321+00:00,40.77417,success,88,94,182,0.0,0.0,0.0,,"{
   ""answer"": ""The purpose of a train-test split is to evaluate the performance of a machine learning model on unseen data, preventing overfitting and providing a more accurate estimate of the model's generalizability."",
   ""confidence"": ""high"",
   ""key_points"": [
@@ -89,14 +90,14 @@ Q3,v3,llama3.1:8b,2026-11-05T07:34:06.632358+00:00,2026-11-05T07:34:47.463135+00
     ""Provides a more accurate estimate of model generalizability""
   ]
 }"
-Q4,v3,llama3.1:8b,2026-11-05T07:34:47.463175+00:00,2026-11-05T07:35:59.167633+00:00,71.704426,success,85,96,181,0.0,0.0,0.0,,"{
+Q4,v3,llama3.1:8b,2026-11-05T07:56:03.861362+00:00,2026-11-05T07:56:43.895689+00:00,40.034322,success,85,96,181,0.0,0.0,0.0,,"{
   ""answer"": ""Precision is the ratio of true positives to the sum of true positives and false positives. Recall is the ratio of true positives to the sum of true positives and false negatives. Precision is useful when the cost of false positives is high, while recall is useful when the cost of false negatives is high."",
   ""confidence"": ""high"",
   ""key_points"": [
     ""Precision = TP / (TP + FP)"",
     ""Recall = TP /"
-Q5,v3,llama3.1:8b,2026-11-05T07:35:59.167676+00:00,2026-11-05T07:36:42.960061+00:00,43.79238,success,88,96,184,0.0,0.0,0.0,,"{
-  ""answer"": ""Data drift refers to a change in the underlying distribution of the data over time, which can affect the performance of a machine learning model. A deployed machine learning system should monitor data drift to ensure that the model remains accurate and effective. Monitoring data drift can help identify when the model needs to be retrained or updated to adapt to the changing data distribution."",
+Q5,v3,llama3.1:8b,2026-11-05T07:56:43.895730+00:00,2026-11-05T07:57:24.545421+00:00,40.649686,success,88,96,184,0.0,0.0,0.0,,"{
+  ""answer"": ""Data drift refers to a change in the underlying distribution of the data over time, which can affect the performance of a machine learning model. A deployed machine learning system should monitor data drift to ensure that the model remains accurate and effective in its predictions. If data drift is not detected and addressed, it can lead to decreased model performance, incorrect predictions, and potential business losses."",
   ""confidence"": ""high"",
   ""key_points"": [
-    ""Data drift can affect model"
+    ""Data"
