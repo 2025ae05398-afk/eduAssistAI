@@ -1,1 +1,4 @@
 prompt_version,mlflow_prompt_version,avg_latency_seconds,avg_input_tokens,avg_output_tokens,avg_cost_per_request_usd,valid_json,successful_responses,recommended
+v1,50,48.6125208,33.4,96.0,0.0,0.0,5,False
+v2,51,59.3198802,55.4,96.0,0.0,0.0,5,False
+v3,52,54.9858086,86.4,95.6,0.0,0.4,5,True
