@@ -7802,10 +7802,13 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-&lt;h1 id="LLMOps-Assignment-2-%E2%80%94-API-Cost,-Latency,-and-Prompt-Version-Management"&gt;LLMOps Assignment 2 — API Cost, Latency, and Prompt Version Management<a class="anchor-link" href="#LLMOps-Assignment-2-%E2%80%94-API-Cost,-Latency,-and-Prompt-Version-Management">¶</a>&lt;/h1&gt;&lt;p&gt;<strong>Course:</strong> MLOps | <strong>Scenario:</strong> EduAssist AI&lt;br /&gt;
-This notebook calls the local Ollama model <code>llama3.1:8b</code> for the same five academic questions under three prompt versions. It records request latency and token-based cost, registers prompts in MLflow, logs aggregate metrics, checks JSON validity for v3, and assigns a <code>production</code> alias based on the measured results.&lt;/p&gt;
+<h1 id="LLMOps-Assignment-2-%E2%80%94-API-Cost,-Latency,-and-Prompt-Version-Management">LLMOps Assignment 2 — API Cost, Latency, and Prompt Version Management<a class="anchor-link" href="#LLMOps-Assignment-2-%E2%80%94-API-Cost,-Latency,-and-Prompt-Version-Management">¶</a></h1><p><strong>Student:</strong> KULDEEP SHARMA<br/>
+<strong>Course:</strong> Machine Learning Operations (MLOps) AIMLCZG523 Assignment 02<br/>
+<strong>Date:</strong> 04-11-2026</p>
+<p><strong>Course:</strong> MLOps | <strong>Scenario:</strong> EduAssist AI<br/>
+This notebook calls the local Ollama model <code>llama3.1:8b</code> for the same five academic questions under three prompt versions. It records request latency and token-based cost, registers prompts in MLflow, logs aggregate metrics, checks JSON validity for v3, and assigns a <code>production</code> alias based on the measured results.</p>
 <blockquote>
-&lt;p&gt;<strong>Runtime setup:</strong> Install and start Ollama, then run <code>ollama pull llama3.1:8b</code>. No cloud API key is required. Local token local token cost is recorded as zero by default; VM/GPU/CPU and electricity costs are excluded. The notebook intentionally does not include fabricated results; generated CSVs reflect actual runs.&lt;/p&gt;
+<p><strong>Runtime setup:</strong> Install and start Ollama, then run <code>ollama pull llama3.1:8b</code>. No cloud API key is required. Local token local token cost is recorded as zero by default; VM/GPU/CPU and electricity costs are excluded. The notebook intentionally does not include fabricated results; generated CSVs reflect actual runs.</p>
 </blockquote>
 </div>
 </div>
@@ -7817,7 +7820,7 @@ This notebook calls the local Ollama model <code>llama3.1:8b</code> for the same
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-&lt;h2 id="Runtime-setup-(run-in-terminal-before-starting-the-notebook)%5Cnbash%5Cnollama-pull-llama3.1:8b%5Cnollama-serve--%23-only-if-the-Ollama-service-is-not-already-running%5Cnpip-install--U-ollama-mlflow-pandas%5Cn%5CnKeep-Ollama-running-while-executing-the-notebook.-Set-OLLAMA_HOST-if-Ollama-is-on-another-machine.%5Cn"&gt;Runtime setup (run in terminal before starting the notebook)\n<code>bash\nollama pull llama3.1:8b\nollama serve  # only if the Ollama service is not already running\npip install -U ollama mlflow pandas\n</code>\nKeep Ollama running while executing the notebook. Set <code>OLLAMA_HOST</code> if Ollama is on another machine.\n<a class="anchor-link" href="#Runtime-setup-(run-in-terminal-before-starting-the-notebook)%5Cnbash%5Cnollama-pull-llama3.1:8b%5Cnollama-serve--%23-only-if-the-Ollama-service-is-not-already-running%5Cnpip-install--U-ollama-mlflow-pandas%5Cn%5CnKeep-Ollama-running-while-executing-the-notebook.-Set-OLLAMA_HOST-if-Ollama-is-on-another-machine.%5Cn">¶</a>&lt;/h2&gt;
+<h2 id="Runtime-setup-(run-in-terminal-before-starting-the-notebook)%5Cnbash%5Cnollama-pull-llama3.1:8b%5Cnollama-serve--%23-only-if-the-Ollama-service-is-not-already-running%5Cnpip-install--U-ollama-mlflow-pandas%5Cn%5CnKeep-Ollama-running-while-executing-the-notebook.-Set-OLLAMA_HOST-if-Ollama-is-on-another-machine.%5Cn">Runtime setup (run in terminal before starting the notebook)\n<code>bash\nollama pull llama3.1:8b\nollama serve  # only if the Ollama service is not already running\npip install -U ollama mlflow pandas\n</code>\nKeep Ollama running while executing the notebook. Set <code>OLLAMA_HOST</code> if Ollama is on another machine.\n<a class="anchor-link" href="#Runtime-setup-(run-in-terminal-before-starting-the-notebook)%5Cnbash%5Cnollama-pull-llama3.1:8b%5Cnollama-serve--%23-only-if-the-Ollama-service-is-not-already-running%5Cnpip-install--U-ollama-mlflow-pandas%5Cn%5CnKeep-Ollama-running-while-executing-the-notebook.-Set-OLLAMA_HOST-if-Ollama-is-on-another-machine.%5Cn">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7970,8 +7973,7 @@ Ollama model is available.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-&lt;h2 id="Task-1-and-Task-2-%E2%80%94-local-Ollama-requests,-latency,-tokens,-and-costs"&gt;Task 1 and Task 2 — local Ollama requests, latency, tokens, and costs<a class="anchor-link" href="#Task-1-and-Task-2-%E2%80%94-local-Ollama-requests,-latency,-tokens,-and-costs">¶</a>&lt;/h2&gt;&lt;p&gt;We run each prompt version against the same five questions (15 requests total). Token usage is taken from the API response. Failed calls are recorded with a status and error, but their missing token counts are not treated as zero-cost successes.\nToken counts are read from Ollama's <code>prompt_eval_count</code> and <code>eval_count</code>. The default local per-token API cost is USD 0; hardware, VM/GPU/CPU, and electricity costs are not included.\n&lt;/p&gt;
-
+<h2 id="Task-1-and-Task-2-%E2%80%94-local-Ollama-requests,-latency,-tokens,-and-costs">Task 1 and Task 2 — local Ollama requests, latency, tokens, and costs<a class="anchor-link" href="#Task-1-and-Task-2-%E2%80%94-local-Ollama-requests,-latency,-tokens,-and-costs">¶</a></h2><p>We run each prompt version against the same five questions (15 requests total). Token usage is taken from the API response. Failed calls are recorded with a status and error, but their missing token counts are not treated as zero-cost successes.\nToken counts are read from Ollama's <code>prompt_eval_count</code> and <code>eval_count</code>. The default local per-token API cost is USD 0; hardware, VM/GPU/CPU, and electricity costs are not included.\n</p>
 </div>
 </div>
 </div>
@@ -8114,7 +8116,7 @@ Ollama model is available.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div>
-&lt;style scoped&gt;
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -8126,56 +8128,26 @@ Ollama model is available.
     .dataframe thead th {
         text-align: right;
     }
-&lt;/style&gt;
-
-  &lt;thead&gt;
-    
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;question_id&lt;/th&gt;
-      &lt;th&gt;prompt_version&lt;/th&gt;
-      &lt;th&gt;model_name&lt;/th&gt;
-      &lt;th&gt;latency_seconds&lt;/th&gt;
-      &lt;th&gt;response_status&lt;/th&gt;
-      &lt;th&gt;input_tokens&lt;/th&gt;
-      &lt;th&gt;output_tokens&lt;/th&gt;
-      &lt;th&gt;total_tokens&lt;/th&gt;
-      &lt;th&gt;cost_per_request_usd&lt;/th&gt;
-    
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    
-      &lt;th&gt;0&lt;/th&gt;
-      
-      &lt;th&gt;1&lt;/th&gt;
-      
-      &lt;th&gt;2&lt;/th&gt;
-      
-      &lt;th&gt;3&lt;/th&gt;
-      
-      &lt;th&gt;4&lt;/th&gt;
-      
-      &lt;th&gt;5&lt;/th&gt;
-      
-      &lt;th&gt;6&lt;/th&gt;
-      
-      &lt;th&gt;7&lt;/th&gt;
-      
-      &lt;th&gt;8&lt;/th&gt;
-      
-      &lt;th&gt;9&lt;/th&gt;
-      
-      &lt;th&gt;10&lt;/th&gt;
-      
-      &lt;th&gt;11&lt;/th&gt;
-      
-      &lt;th&gt;12&lt;/th&gt;
-      
-      &lt;th&gt;13&lt;/th&gt;
-      
-      &lt;th&gt;14&lt;/th&gt;
-      
-  &lt;/tbody&gt;
-<table class="dataframe">&lt;tbody&gt;<tr></tr><tr><td>Q1</td>
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>question_id</th>
+<th>prompt_version</th>
+<th>model_name</th>
+<th>latency_seconds</th>
+<th>response_status</th>
+<th>input_tokens</th>
+<th>output_tokens</th>
+<th>total_tokens</th>
+<th>cost_per_request_usd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Q1</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>217.084008</td>
@@ -8185,7 +8157,9 @@ Ollama model is available.
 <td>211</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q2</td>
+<tr>
+<th>1</th>
+<td>Q2</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>86.811485</td>
@@ -8195,7 +8169,9 @@ Ollama model is available.
 <td>214</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q3</td>
+<tr>
+<th>2</th>
+<td>Q3</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>94.852010</td>
@@ -8205,7 +8181,9 @@ Ollama model is available.
 <td>215</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q4</td>
+<tr>
+<th>3</th>
+<td>Q4</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>121.603092</td>
@@ -8215,7 +8193,9 @@ Ollama model is available.
 <td>212</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q5</td>
+<tr>
+<th>4</th>
+<td>Q5</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>83.954807</td>
@@ -8225,7 +8205,9 @@ Ollama model is available.
 <td>215</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q1</td>
+<tr>
+<th>5</th>
+<td>Q1</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>111.128140</td>
@@ -8235,7 +8217,9 @@ Ollama model is available.
 <td>233</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q2</td>
+<tr>
+<th>6</th>
+<td>Q2</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>89.189397</td>
@@ -8245,7 +8229,9 @@ Ollama model is available.
 <td>236</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q3</td>
+<tr>
+<th>7</th>
+<td>Q3</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>84.330076</td>
@@ -8255,7 +8241,9 @@ Ollama model is available.
 <td>237</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q4</td>
+<tr>
+<th>8</th>
+<td>Q4</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>80.029658</td>
@@ -8265,7 +8253,9 @@ Ollama model is available.
 <td>234</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q5</td>
+<tr>
+<th>9</th>
+<td>Q5</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>90.034259</td>
@@ -8275,7 +8265,9 @@ Ollama model is available.
 <td>237</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q1</td>
+<tr>
+<th>10</th>
+<td>Q1</td>
 <td>v3</td>
 <td>llama3.1:8b</td>
 <td>64.588092</td>
@@ -8285,7 +8277,9 @@ Ollama model is available.
 <td>181</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q2</td>
+<tr>
+<th>11</th>
+<td>Q2</td>
 <td>v3</td>
 <td>llama3.1:8b</td>
 <td>152.212785</td>
@@ -8295,7 +8289,9 @@ Ollama model is available.
 <td>262</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q3</td>
+<tr>
+<th>12</th>
+<td>Q3</td>
 <td>v3</td>
 <td>llama3.1:8b</td>
 <td>40.042007</td>
@@ -8305,7 +8301,9 @@ Ollama model is available.
 <td>182</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q4</td>
+<tr>
+<th>13</th>
+<td>Q4</td>
 <td>v3</td>
 <td>llama3.1:8b</td>
 <td>62.334268</td>
@@ -8315,7 +8313,9 @@ Ollama model is available.
 <td>219</td>
 <td>0.0</td>
 </tr>
-<tr><td>Q5</td>
+<tr>
+<th>14</th>
+<td>Q5</td>
 <td>v3</td>
 <td>llama3.1:8b</td>
 <td>83.207426</td>
@@ -8324,7 +8324,9 @@ Ollama model is available.
 <td>134</td>
 <td>222</td>
 <td>0.0</td>
-</tr>&lt;/tbody&gt;</table>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -8380,7 +8382,7 @@ Saved: latency_tokens_cost.csv
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div>
-&lt;style scoped&gt;
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -8392,31 +8394,31 @@ Saved: latency_tokens_cost.csv
     .dataframe thead th {
         text-align: right;
     }
-&lt;/style&gt;
-
-  &lt;thead&gt;
-    
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;count&lt;/th&gt;
-      &lt;th&gt;mean_seconds&lt;/th&gt;
-      &lt;th&gt;median_seconds&lt;/th&gt;
-      &lt;th&gt;min_seconds&lt;/th&gt;
-      &lt;th&gt;max_seconds&lt;/th&gt;
-      &lt;th&gt;std_seconds_sample&lt;/th&gt;
-    
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    
-      &lt;th&gt;0&lt;/th&gt;
-      
-  &lt;/tbody&gt;
-<table class="dataframe">&lt;tbody&gt;<tr></tr><tr><td>15</td>
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>count</th>
+<th>mean_seconds</th>
+<th>median_seconds</th>
+<th>min_seconds</th>
+<th>max_seconds</th>
+<th>std_seconds_sample</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>15</td>
 <td>97.426767</td>
 <td>86.811485</td>
 <td>40.042007</td>
 <td>217.084008</td>
 <td>42.083371</td>
-</tr>&lt;/tbody&gt;</table>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -8437,8 +8439,7 @@ Possible reasons include network/service variability, request queueing, prompt l
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-&lt;h2 id="Task-3-%E2%80%94-MLflow-prompt-registry-and-evaluation"&gt;Task 3 — MLflow prompt registry and evaluation<a class="anchor-link" href="#Task-3-%E2%80%94-MLflow-prompt-registry-and-evaluation">¶</a>&lt;/h2&gt;&lt;p&gt;The notebook registers v1–v3 under one prompt name, logs an MLflow run for each version, and computes the required aggregate metrics. <code>valid_json</code> is the fraction of successful responses that parse as JSON with the required keys and value types. For v1/v2, JSON validity is still measured but is not a required output property; the comparison table will show their observed rates.&lt;/p&gt;
-
+<h2 id="Task-3-%E2%80%94-MLflow-prompt-registry-and-evaluation">Task 3 — MLflow prompt registry and evaluation<a class="anchor-link" href="#Task-3-%E2%80%94-MLflow-prompt-registry-and-evaluation">¶</a></h2><p>The notebook registers v1–v3 under one prompt name, logs an MLflow run for each version, and computes the required aggregate metrics. <code>valid_json</code> is the fraction of successful responses that parse as JSON with the required keys and value types. For v1/v2, JSON validity is still measured but is not a required output property; the comparison table will show their observed rates.</p>
 </div>
 </div>
 </div>
@@ -8553,7 +8554,7 @@ v3 registered as MLflow prompt version 43
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div>
-&lt;style scoped&gt;
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -8565,32 +8566,26 @@ v3 registered as MLflow prompt version 43
     .dataframe thead th {
         text-align: right;
     }
-&lt;/style&gt;
-
-  &lt;thead&gt;
-    
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;prompt_version&lt;/th&gt;
-      &lt;th&gt;mlflow_prompt_version&lt;/th&gt;
-      &lt;th&gt;avg_latency_seconds&lt;/th&gt;
-      &lt;th&gt;avg_input_tokens&lt;/th&gt;
-      &lt;th&gt;avg_output_tokens&lt;/th&gt;
-      &lt;th&gt;avg_cost_per_request_usd&lt;/th&gt;
-      &lt;th&gt;valid_json&lt;/th&gt;
-      &lt;th&gt;successful_responses&lt;/th&gt;
-      &lt;th&gt;recommended&lt;/th&gt;
-    
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    
-      &lt;th&gt;0&lt;/th&gt;
-      
-      &lt;th&gt;1&lt;/th&gt;
-      
-      &lt;th&gt;2&lt;/th&gt;
-      
-  &lt;/tbody&gt;
-<table class="dataframe">&lt;tbody&gt;<tr></tr><tr><td>v1</td>
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>mlflow_prompt_version</th>
+<th>avg_latency_seconds</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_cost_per_request_usd</th>
+<th>valid_json</th>
+<th>successful_responses</th>
+<th>recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
 <td>41</td>
 <td>120.861080</td>
 <td>33.4</td>
@@ -8600,7 +8595,9 @@ v3 registered as MLflow prompt version 43
 <td>5</td>
 <td>False</td>
 </tr>
-<tr><td>v2</td>
+<tr>
+<th>1</th>
+<td>v2</td>
 <td>42</td>
 <td>90.942306</td>
 <td>55.4</td>
@@ -8610,7 +8607,9 @@ v3 registered as MLflow prompt version 43
 <td>5</td>
 <td>False</td>
 </tr>
-<tr><td>v3</td>
+<tr>
+<th>2</th>
+<td>v3</td>
 <td>43</td>
 <td>80.476916</td>
 <td>86.4</td>
@@ -8619,7 +8618,9 @@ v3 registered as MLflow prompt version 43
 <td>1.0</td>
 <td>5</td>
 <td>False</td>
-</tr>&lt;/tbody&gt;</table>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -8687,7 +8688,7 @@ v3 registered as MLflow prompt version 43
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div>
-&lt;style scoped&gt;
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -8699,32 +8700,26 @@ v3 registered as MLflow prompt version 43
     .dataframe thead th {
         text-align: right;
     }
-&lt;/style&gt;
-
-  &lt;thead&gt;
-    
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;prompt_version&lt;/th&gt;
-      &lt;th&gt;mlflow_prompt_version&lt;/th&gt;
-      &lt;th&gt;avg_latency_seconds&lt;/th&gt;
-      &lt;th&gt;avg_input_tokens&lt;/th&gt;
-      &lt;th&gt;avg_output_tokens&lt;/th&gt;
-      &lt;th&gt;avg_cost_per_request_usd&lt;/th&gt;
-      &lt;th&gt;valid_json&lt;/th&gt;
-      &lt;th&gt;successful_responses&lt;/th&gt;
-      &lt;th&gt;recommended&lt;/th&gt;
-    
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    
-      &lt;th&gt;0&lt;/th&gt;
-      
-      &lt;th&gt;1&lt;/th&gt;
-      
-      &lt;th&gt;2&lt;/th&gt;
-      
-  &lt;/tbody&gt;
-<table class="dataframe">&lt;tbody&gt;<tr></tr><tr><td>v1</td>
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>mlflow_prompt_version</th>
+<th>avg_latency_seconds</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_cost_per_request_usd</th>
+<th>valid_json</th>
+<th>successful_responses</th>
+<th>recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
 <td>41</td>
 <td>120.861080</td>
 <td>33.4</td>
@@ -8734,7 +8729,9 @@ v3 registered as MLflow prompt version 43
 <td>5</td>
 <td>False</td>
 </tr>
-<tr><td>v2</td>
+<tr>
+<th>1</th>
+<td>v2</td>
 <td>42</td>
 <td>90.942306</td>
 <td>55.4</td>
@@ -8744,7 +8741,9 @@ v3 registered as MLflow prompt version 43
 <td>5</td>
 <td>False</td>
 </tr>
-<tr><td>v3</td>
+<tr>
+<th>2</th>
+<td>v3</td>
 <td>43</td>
 <td>80.476916</td>
 <td>86.4</td>
@@ -8753,7 +8752,9 @@ v3 registered as MLflow prompt version 43
 <td>1.0</td>
 <td>5</td>
 <td>True</td>
-</tr>&lt;/tbody&gt;</table>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -8800,7 +8801,7 @@ v3 registered as MLflow prompt version 43
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div>
-&lt;style scoped&gt;
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -8812,30 +8813,24 @@ v3 registered as MLflow prompt version 43
     .dataframe thead th {
         text-align: right;
     }
-&lt;/style&gt;
-
-  &lt;thead&gt;
-    
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;prompt_version&lt;/th&gt;
-      &lt;th&gt;successful_requests&lt;/th&gt;
-      &lt;th&gt;avg_cost_per_request_usd&lt;/th&gt;
-      &lt;th&gt;avg_input_tokens&lt;/th&gt;
-      &lt;th&gt;avg_output_tokens&lt;/th&gt;
-      &lt;th&gt;avg_latency_seconds&lt;/th&gt;
-      &lt;th&gt;projected_monthly_cost_10000_usd&lt;/th&gt;
-    
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    
-      &lt;th&gt;0&lt;/th&gt;
-      
-      &lt;th&gt;1&lt;/th&gt;
-      
-      &lt;th&gt;2&lt;/th&gt;
-      
-  &lt;/tbody&gt;
-<table class="dataframe">&lt;tbody&gt;<tr></tr><tr><td>v1</td>
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>successful_requests</th>
+<th>avg_cost_per_request_usd</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_latency_seconds</th>
+<th>projected_monthly_cost_10000_usd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
 <td>5</td>
 <td>0.0</td>
 <td>33.4</td>
@@ -8843,7 +8838,9 @@ v3 registered as MLflow prompt version 43
 <td>120.861080</td>
 <td>0.0</td>
 </tr>
-<tr><td>v2</td>
+<tr>
+<th>1</th>
+<td>v2</td>
 <td>5</td>
 <td>0.0</td>
 <td>55.4</td>
@@ -8851,14 +8848,18 @@ v3 registered as MLflow prompt version 43
 <td>90.942306</td>
 <td>0.0</td>
 </tr>
-<tr><td>v3</td>
+<tr>
+<th>2</th>
+<td>v3</td>
 <td>5</td>
 <td>0.0</td>
 <td>86.4</td>
 <td>126.8</td>
 <td>80.476916</td>
 <td>0.0</td>
-</tr>&lt;/tbody&gt;</table>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -8879,12 +8880,12 @@ Pricing is an estimate in USD, based on the configured model rates and API usage
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-&lt;h2 id="Required-interpretation-and-screenshots"&gt;Required interpretation and screenshots<a class="anchor-link" href="#Required-interpretation-and-screenshots">¶</a>&lt;/h2&gt;<ul>
-<li><strong>Slowest request:</strong> use the row with maximum latency from <code>latency_tokens_cost.csv</code>; discuss plausible causes only, not a definitive diagnosis.</li>
-<li><strong>Cost optimization:</strong> keep answers concise with a response token cap; use caching for stable instructions/context; consider a smaller model for simple questions after quality evaluation.</li>
-<li><strong>Prompt diff:</strong> in MLflow UI, open <code>eduassist_academic_qa</code> and compare versions 1, 2, and 3. The prompt text and commit messages are the version evidence.</li>
+<h2 id="Required-interpretation-and-screenshots">Required interpretation and screenshots<a class="anchor-link" href="#Required-interpretation-and-screenshots">¶</a></h2><ul>
+<li><strong>Slowest request:</strong> Please check the row with maximum latency from <code>latency_tokens_cost.csv</code>.</li>
+<li><strong>Cost optimization:</strong> Please refer the screenshots in report and latency_tokens_cost.csv.</li>
+<li><strong>Prompt diff:</strong> Attached the screenshots in report from MLflow UI, open <code>eduassist_academic_qa</code> and comparision of versions 1, 2, and 3. The prompt text and commit messages are the version evidence.</li>
 <li><strong>Screenshots to capture manually:</strong> experiment runs and metrics; Prompt Registry showing versions; prompt comparison/diff; <code>production</code> alias on the selected version.</li>
-<li><strong>Report:</strong> populate the report template with actual output from the CSVs. Never claim the code was executed successfully unless you ran it and verified the outputs.</li>
+<li><strong>Report:</strong> Report is attached.</li>
 </ul>
 </div>
 </div>
@@ -9008,7 +9009,7 @@ Columns:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div>
-&lt;style scoped&gt;
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -9020,32 +9021,26 @@ Columns:
     .dataframe thead th {
         text-align: right;
     }
-&lt;/style&gt;
-
-  &lt;thead&gt;
-    
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;prompt_version&lt;/th&gt;
-      &lt;th&gt;mlflow_prompt_version&lt;/th&gt;
-      &lt;th&gt;avg_latency_seconds&lt;/th&gt;
-      &lt;th&gt;avg_input_tokens&lt;/th&gt;
-      &lt;th&gt;avg_output_tokens&lt;/th&gt;
-      &lt;th&gt;avg_cost_per_request_usd&lt;/th&gt;
-      &lt;th&gt;valid_json&lt;/th&gt;
-      &lt;th&gt;successful_responses&lt;/th&gt;
-      &lt;th&gt;recommended&lt;/th&gt;
-    
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    
-      &lt;th&gt;0&lt;/th&gt;
-      
-      &lt;th&gt;1&lt;/th&gt;
-      
-      &lt;th&gt;2&lt;/th&gt;
-      
-  &lt;/tbody&gt;
-<table class="dataframe">&lt;tbody&gt;<tr></tr><tr><td>v1</td>
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>prompt_version</th>
+<th>mlflow_prompt_version</th>
+<th>avg_latency_seconds</th>
+<th>avg_input_tokens</th>
+<th>avg_output_tokens</th>
+<th>avg_cost_per_request_usd</th>
+<th>valid_json</th>
+<th>successful_responses</th>
+<th>recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>v1</td>
 <td>41</td>
 <td>120.861080</td>
 <td>33.4</td>
@@ -9055,7 +9050,9 @@ Columns:
 <td>5</td>
 <td>False</td>
 </tr>
-<tr><td>v2</td>
+<tr>
+<th>1</th>
+<td>v2</td>
 <td>42</td>
 <td>90.942306</td>
 <td>55.4</td>
@@ -9065,7 +9062,9 @@ Columns:
 <td>5</td>
 <td>False</td>
 </tr>
-<tr><td>v3</td>
+<tr>
+<th>2</th>
+<td>v3</td>
 <td>43</td>
 <td>80.476916</td>
 <td>86.4</td>
@@ -9074,7 +9073,9 @@ Columns:
 <td>1.0</td>
 <td>5</td>
 <td>True</td>
-</tr>&lt;/tbody&gt;</table>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -9122,7 +9123,7 @@ Columns:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div>
-&lt;style scoped&gt;
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -9134,52 +9135,32 @@ Columns:
     .dataframe thead th {
         text-align: right;
     }
-&lt;/style&gt;
-
-  &lt;thead&gt;
-    
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;question_id&lt;/th&gt;
-      &lt;th&gt;prompt_version&lt;/th&gt;
-      &lt;th&gt;model_name&lt;/th&gt;
-      &lt;th&gt;start_time_utc&lt;/th&gt;
-      &lt;th&gt;end_time_utc&lt;/th&gt;
-      &lt;th&gt;latency_seconds&lt;/th&gt;
-      &lt;th&gt;response_status&lt;/th&gt;
-      &lt;th&gt;input_tokens&lt;/th&gt;
-      &lt;th&gt;output_tokens&lt;/th&gt;
-      &lt;th&gt;total_tokens&lt;/th&gt;
-      &lt;th&gt;input_cost_usd&lt;/th&gt;
-      &lt;th&gt;output_cost_usd&lt;/th&gt;
-      &lt;th&gt;cost_per_request_usd&lt;/th&gt;
-      &lt;th&gt;error&lt;/th&gt;
-      &lt;th&gt;response_text&lt;/th&gt;
-    
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    
-      &lt;th&gt;0&lt;/th&gt;
-      
-      &lt;th&gt;1&lt;/th&gt;
-      
-      &lt;th&gt;2&lt;/th&gt;
-      
-      &lt;th&gt;3&lt;/th&gt;
-      
-      &lt;th&gt;4&lt;/th&gt;
-      
-      &lt;th&gt;5&lt;/th&gt;
-      
-      &lt;th&gt;6&lt;/th&gt;
-      
-      &lt;th&gt;7&lt;/th&gt;
-      
-      &lt;th&gt;8&lt;/th&gt;
-      
-      &lt;th&gt;9&lt;/th&gt;
-      
-  &lt;/tbody&gt;
-<table class="dataframe">&lt;tbody&gt;<tr></tr><tr><td>Q1</td>
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>question_id</th>
+<th>prompt_version</th>
+<th>model_name</th>
+<th>start_time_utc</th>
+<th>end_time_utc</th>
+<th>latency_seconds</th>
+<th>response_status</th>
+<th>input_tokens</th>
+<th>output_tokens</th>
+<th>total_tokens</th>
+<th>input_cost_usd</th>
+<th>output_cost_usd</th>
+<th>cost_per_request_usd</th>
+<th>error</th>
+<th>response_text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Q1</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:34:06.387026+00:00</td>
@@ -9195,7 +9176,9 @@ Columns:
 <td>NaN</td>
 <td>**Supervised Learning:**\n\nIn supervised lear...</td>
 </tr>
-<tr><td>Q2</td>
+<tr>
+<th>1</th>
+<td>Q2</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:37:43.471095+00:00</td>
@@ -9211,7 +9194,9 @@ Columns:
 <td>NaN</td>
 <td>**Overfitting in Machine Learning**\n=========...</td>
 </tr>
-<tr><td>Q3</td>
+<tr>
+<th>2</th>
+<td>Q3</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:39:10.282631+00:00</td>
@@ -9227,7 +9212,9 @@ Columns:
 <td>NaN</td>
 <td>## Step 1: Understanding the purpose of a trai...</td>
 </tr>
-<tr><td>Q4</td>
+<tr>
+<th>3</th>
+<td>Q4</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:40:45.134690+00:00</td>
@@ -9243,7 +9230,9 @@ Columns:
 <td>NaN</td>
 <td>**Precision and Recall: Understanding the Metr...</td>
 </tr>
-<tr><td>Q5</td>
+<tr>
+<th>4</th>
+<td>Q5</td>
 <td>v1</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:42:46.737829+00:00</td>
@@ -9259,7 +9248,9 @@ Columns:
 <td>NaN</td>
 <td>**Data Drift: Understanding its Impact on Mach...</td>
 </tr>
-<tr><td>Q1</td>
+<tr>
+<th>5</th>
+<td>Q1</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:44:10.692682+00:00</td>
@@ -9275,7 +9266,9 @@ Columns:
 <td>NaN</td>
 <td>In machine learning, there are two main types ...</td>
 </tr>
-<tr><td>Q2</td>
+<tr>
+<th>6</th>
+<td>Q2</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:46:01.820865+00:00</td>
@@ -9291,7 +9284,9 @@ Columns:
 <td>NaN</td>
 <td>**What is Overfitting in Machine Learning?**\n...</td>
 </tr>
-<tr><td>Q3</td>
+<tr>
+<th>7</th>
+<td>Q3</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:47:31.010311+00:00</td>
@@ -9307,7 +9302,9 @@ Columns:
 <td>NaN</td>
 <td>When building a machine learning model, a trai...</td>
 </tr>
-<tr><td>Q4</td>
+<tr>
+<th>8</th>
+<td>Q4</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:48:55.340432+00:00</td>
@@ -9323,7 +9320,9 @@ Columns:
 <td>NaN</td>
 <td>I'd be happy to explain precision and recall i...</td>
 </tr>
-<tr><td>Q5</td>
+<tr>
+<th>9</th>
+<td>Q5</td>
 <td>v2</td>
 <td>llama3.1:8b</td>
 <td>2026-11-04T18:50:15.370148+00:00</td>
@@ -9338,7 +9337,9 @@ Columns:
 <td>0.0</td>
 <td>NaN</td>
 <td>**Data Drift:**\n\nData drift refers to a chan...</td>
-</tr>&lt;/tbody&gt;</table>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -9354,6 +9355,20 @@ API errors:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bb9c29d7-fb8f-4f26-808f-35c0bb4ec8ba">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>html<span class="w"> </span>MLOps_Assignment_2.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e2cac1a6-1506-4538-b00b-caae41ca8f7b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
